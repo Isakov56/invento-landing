@@ -37,11 +37,13 @@ export default function Hero() {
 
       // Animate stats inside dashboard
       const stats = dashboardRef.current?.querySelectorAll('[data-stat]')
-      gsap.fromTo(
-        stats,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.8, ease: 'power2.out' }
-      )
+      if (stats) {
+        gsap.fromTo(
+          stats,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.8, ease: 'power2.out' }
+        )
+      }
     }, heroRef)
 
     return () => ctx.revert()

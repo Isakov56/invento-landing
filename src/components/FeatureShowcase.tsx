@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Zap, Package, BarChart3, Building2, Users, CreditCard, UserCircle, FileDown, Smartphone, Shield } from 'lucide-react'
-import { gsap, ScrollTrigger } from '../utils/gsapConfig'
+import { gsap } from '../utils/gsapConfig'
 import styles from './FeatureShowcase.module.css'
 
 const features = [

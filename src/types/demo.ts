@@ -50,6 +50,7 @@ export interface CategoryRevenue {
   name: string
   value: number
   fill?: string
+  [key: string]: string | number | undefined
 }
 
 export interface TopProduct {
