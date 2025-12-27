@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
 import { TrendingUp, Users, Store, Zap } from 'lucide-react'
 import { gsap } from '../utils/gsapConfig'
 import styles from './Stats.module.css'

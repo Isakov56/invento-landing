@@ -69,7 +69,7 @@ export default function PinShowcase() {
       })
 
       // Animate each step
-      showcaseSteps.forEach((step, index) => {
+      showcaseSteps.forEach((_step, index) => {
         const selector = `[data-step="${index}"]`
 
         if (index === 0) {

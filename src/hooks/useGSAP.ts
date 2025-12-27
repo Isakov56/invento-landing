@@ -79,7 +79,7 @@ export function useScrollTrigger<T extends HTMLElement = HTMLDivElement>(
  * Hook for creating responsive GSAP animations
  */
 export function useResponsiveGSAP<T extends HTMLElement = HTMLDivElement>(
-  callback: (context: { ref: RefObject<T>; gsap: typeof gsap; mm: typeof gsap.matchMedia }) => void | (() => void),
+  callback: (context: { ref: RefObject<T>; gsap: typeof gsap; mm: gsap.MatchMedia }) => void | (() => void),
   dependencies: DependencyList = []
 ): RefObject<T> {
   const ref = useRef<T>(null)
