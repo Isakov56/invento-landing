@@ -1,0 +1,130 @@
+.integrations {
+  padding: 5rem 2rem;
+  background: var(--pale-gray);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h2 {
+  font-size: 2.75rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.header p {
+  font-size: 1.25rem;
+  color: var(--slate-gray);
+}
+
+.carouselWrapper {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.carousel {
+  display: flex;
+  gap: 1.5rem;
+  width: fit-content;
+}
+
+.integrationCard {
+  flex-shrink: 0;
+  width: 280px;
+  background: white;
+  border: 2px solid var(--border-gray);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.integrationCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.integrationIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.integrationInfo {
+  flex: 1;
+}
+
+.integrationInfo h4 {
+  font-size: 1rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.integrationInfo p {
+  font-size: 0.875rem;
+  color: var(--slate-gray);
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer p {
+  color: var(--slate-gray);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.viewAll {
+  color: var(--royal-blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.viewAll:hover {
+  color: var(--navy-blue);
+  gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .integrations {
+    padding: 3rem 1.5rem;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1.125rem;
+  }
+
+  .integrationCard {
+    width: 240px;
+  }
+}

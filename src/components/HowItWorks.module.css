@@ -1,0 +1,172 @@
+.howItWorks {
+  padding: 5rem 2rem;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header h2 {
+  font-size: 2.75rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.header p {
+  font-size: 1.25rem;
+  color: var(--slate-gray);
+}
+
+.stepsContainer {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.connectionLine {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 0;
+  display: block;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+}
+
+.stepNumber {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--light-blue);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.stepIcon {
+  width: 80px;
+  height: 80px;
+  background: var(--royal-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 2;
+}
+
+.stepIcon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.step h3 {
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.step p {
+  color: var(--slate-gray);
+  line-height: 1.6;
+  font-size: 0.9375rem;
+}
+
+.cta {
+  text-align: center;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: var(--royal-blue);
+  color: white;
+  padding: 1.25rem 2.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+}
+
+.ctaButton:hover {
+  background: var(--navy-blue);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+  }
+
+  .connectionLine {
+    display: none;
+  }
+
+  .header h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .howItWorks {
+    padding: 3rem 1.5rem;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1.125rem;
+  }
+
+  .stepNumber {
+    font-size: 2.5rem;
+  }
+
+  .stepIcon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .stepIcon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .step h3 {
+    font-size: 1.25rem;
+  }
+}

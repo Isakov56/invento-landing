@@ -1,0 +1,113 @@
+.trustBadges {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h2 {
+  font-size: 2.25rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.header p {
+  font-size: 1.125rem;
+  color: var(--slate-gray);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.badgeCard {
+  background: white;
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  min-height: 100px;
+}
+
+.badgeCard:hover {
+  border-color: var(--royal-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.logoPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.logoPlaceholder span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  color: var(--slate-gray);
+  font-size: 0.95rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .trustBadges {
+    padding: 3rem 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .badgeCard {
+    padding: 1.5rem 0.75rem;
+    min-height: 80px;
+  }
+
+  .logoPlaceholder span {
+    font-size: 0.75rem;
+  }
+
+  .header h2 {
+    font-size: 1.75rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+}

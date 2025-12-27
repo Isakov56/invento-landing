@@ -1,0 +1,270 @@
+.calculator {
+  padding: 5rem 2rem;
+  background: var(--pale-gray);
+  position: relative;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.headerIcon {
+  width: 48px;
+  height: 48px;
+  color: var(--royal-blue);
+  margin: 0 auto 1rem;
+}
+
+.header h2 {
+  font-size: 2.75rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.header p {
+  font-size: 1.25rem;
+  color: var(--slate-gray);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.inputs {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-gray);
+  box-shadow: var(--shadow-sm);
+}
+
+.inputGroup {
+  margin-bottom: 2rem;
+}
+
+.inputGroup:last-child {
+  margin-bottom: 0;
+}
+
+.inputGroup label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.value {
+  color: var(--royal-blue);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: var(--light-gray);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.slider:hover {
+  background: var(--light-blue);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--royal-blue);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: var(--navy-blue);
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--royal-blue);
+  cursor: pointer;
+  border: none;
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: var(--navy-blue);
+  transform: scale(1.1);
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.resultCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-gray);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.resultCard:hover {
+  border-color: var(--royal-blue);
+  box-shadow: var(--shadow-lg);
+}
+
+.resultCard.highlight {
+  background: var(--royal-blue);
+  border: 1px solid var(--royal-blue);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.resultIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: var(--light-blue);
+  color: var(--royal-blue);
+}
+
+.highlight .resultIcon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.resultIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.resultValue {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dark-gray);
+  line-height: 1;
+}
+
+.highlight .resultValue {
+  color: white;
+}
+
+.resultValue span {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.resultLabel {
+  font-size: 0.95rem;
+  color: var(--slate-gray);
+  margin-top: 0.5rem;
+}
+
+.highlight .resultLabel {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid var(--royal-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.ctaText {
+  font-size: 1.125rem;
+  color: var(--dark-gray);
+  margin-bottom: 1.5rem;
+}
+
+.ctaText strong {
+  color: var(--royal-blue);
+  font-size: 1.5rem;
+}
+
+.ctaButton {
+  background: var(--royal-blue);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+}
+
+.ctaButton:hover {
+  background: var(--navy-blue);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .header h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .calculator {
+    padding: 3rem 1.5rem;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1.125rem;
+  }
+
+  .inputs {
+    padding: 1.5rem;
+  }
+
+  .resultCard {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .resultValue {
+    font-size: 1.75rem;
+  }
+}

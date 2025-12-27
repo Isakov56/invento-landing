@@ -1,0 +1,181 @@
+.featureShowcase {
+  background: white;
+  overflow: hidden;
+}
+
+.stickyContainer {
+  padding: 5rem 0;
+}
+
+.header {
+  text-align: center;
+  padding: 0 2rem;
+  margin-bottom: 4rem;
+}
+
+.header h2 {
+  font-size: 2.75rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.scrollHint {
+  font-size: 1rem;
+  color: var(--royal-blue);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.scrollableArea {
+  position: relative;
+  padding: 2rem 0;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Visual indicator when hovering - optional */
+@media (min-width: 1024px) {
+  .scrollableArea {
+    cursor: grab;
+    user-select: none;
+  }
+
+  .scrollableArea:hover {
+    background: rgba(37, 99, 235, 0.02);
+  }
+
+  .scrollableArea:active {
+    cursor: grabbing;
+  }
+}
+
+.horizontalScroll {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+  will-change: transform;
+  width: 100%;
+  pointer-events: none;
+}
+
+.horizontalScroll > * {
+  pointer-events: auto;
+}
+
+.featureCard {
+  flex-shrink: 0;
+  width: 400px;
+  background: white;
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.featureCard:hover {
+  box-shadow: var(--shadow-xl);
+  border-color: var(--royal-blue);
+}
+
+.iconWrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+}
+
+.featureCard h3 {
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.featureCard p {
+  color: var(--slate-gray);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.cardNumber {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  font-weight: 800;
+  opacity: 0.1;
+  line-height: 1;
+}
+
+/* Mobile: vertical stack */
+@media (max-width: 1023px) {
+  .stickyContainer {
+    padding: 3rem 2rem;
+  }
+
+  .header h2 {
+    font-size: 2.25rem;
+  }
+
+  .scrollHint {
+    display: none;
+  }
+
+  .scrollableArea {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .horizontalScroll {
+    flex-direction: column;
+    padding: 0;
+    cursor: default;
+    transform: none !important;
+    gap: 1.5rem;
+  }
+
+  .featureCard {
+    width: 100%;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .stickyContainer {
+    padding: 3rem 1.5rem;
+  }
+
+  .header {
+    padding: 0;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .featureCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .featureCard h3 {
+    font-size: 1.25rem;
+  }
+
+  .cardNumber {
+    font-size: 2.5rem;
+  }
+}

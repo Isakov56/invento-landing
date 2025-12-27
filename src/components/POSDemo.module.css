@@ -1,0 +1,140 @@
+.posDemo {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-gray);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.header h3 {
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--slate-gray);
+  font-size: 0.95rem;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  min-height: 220px;
+  overflow: hidden;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--pale-gray);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: 1px solid var(--border-gray);
+}
+
+.product:hover {
+  border-color: var(--royal-blue);
+  box-shadow: var(--shadow-md);
+  background: var(--light-blue);
+}
+
+.productIcon {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 10px;
+}
+
+.productInfo {
+  flex: 1;
+}
+
+.productName {
+  font-weight: 600;
+  color: var(--dark-gray);
+  margin-bottom: 0.25rem;
+}
+
+.productSku {
+  font-size: 0.85rem;
+  color: var(--slate-gray);
+}
+
+.productPrice {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--royal-blue);
+}
+
+.total {
+  background: var(--royal-blue);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.totalRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.cartIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.itemCount {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.confetti {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFD700;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+@media (max-width: 768px) {
+  .posDemo {
+    padding: 1.5rem;
+  }
+
+  .productIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .productPrice {
+    font-size: 1.1rem;
+  }
+
+  .totalRow {
+    font-size: 1.25rem;
+  }
+}

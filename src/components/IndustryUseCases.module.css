@@ -1,0 +1,145 @@
+.industries {
+  padding: 5rem 2rem;
+  background: var(--pale-gray);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header h2 {
+  font-size: 2.75rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.header p {
+  font-size: 1.25rem;
+  color: var(--slate-gray);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.industryCard {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-gray);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.industryCard:hover {
+  box-shadow: var(--shadow-xl);
+  border-color: var(--royal-blue);
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.industryCard h3 {
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.description {
+  color: var(--slate-gray);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.featureList {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.featureList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark-gray);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.checkmark {
+  font-weight: 700;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.learnMore {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.learnMore:hover {
+  gap: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .header h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .industries {
+    padding: 3rem 1.5rem;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1.125rem;
+  }
+
+  .industryCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .industryCard h3 {
+    font-size: 1.25rem;
+  }
+}
