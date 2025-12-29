@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import FeatureShowcase from './components/FeatureShowcase'
@@ -17,6 +17,8 @@ import Footer from './components/Footer'
 import AIChatbot from './components/AIChatbot'
 
 function App() {
+  const [showDemoSidebar, setShowDemoSidebar] = useState(false)
+
   useEffect(() => {
     // Smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth'
@@ -28,12 +30,18 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar />
+      <Navbar
+        showDemoSidebar={showDemoSidebar}
+        setShowDemoSidebar={setShowDemoSidebar}
+      />
       <Hero />
       <FeatureShowcase />
-      <InteractiveDemo />
-      <HowItWorks />
       <IndustryUseCases />
+      <InteractiveDemo
+        showDemoSidebar={showDemoSidebar}
+        setShowDemoSidebar={setShowDemoSidebar}
+      />
+      <HowItWorks />
       <TestimonialsCarousel />
       <ROICalculator />
       <LiveStatsCounter />

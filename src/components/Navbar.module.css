@@ -7,7 +7,13 @@
   z-index: 1000;
   border-bottom: 1px solid var(--border-gray);
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
+  transition: all 0.4s ease;
+}
+
+.navDemoMode {
+  background: linear-gradient(135deg, rgba(240, 253, 250, 0.98) 0%, rgba(236, 253, 245, 0.98) 100%);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
 }
 
 .container {
@@ -19,6 +25,13 @@
   align-items: center;
 }
 
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
 .logo {
   font-size: 1.75rem;
   font-weight: 800;
@@ -28,6 +41,60 @@
 
 .logo:hover {
   color: var(--royal-blue);
+}
+
+/* Demo Badge */
+.demoBadge {
+  position: relative;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.demoBadgeText {
+  position: relative;
+  z-index: 2;
+}
+
+.demoPulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.demoTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--royal-blue);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hide demo title on desktop, show on mobile only */
+@media (min-width: 769px) {
+  .demoTitle {
+    display: none;
+  }
+
+  .navDemoMode .navLinks,
+  .navDemoMode .ctaButton {
+    display: flex !important;
+  }
 }
 
 .navLinks {
@@ -68,12 +135,12 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: rgba(248, 250, 252, 0.9);
+  color: var(--royal-blue);
   transition: color 0.3s;
 }
 
 .menuButton:hover {
-  color: white;
+  color: var(--navy-blue);
 }
 
 .mobileMenu {
@@ -135,5 +202,39 @@
 
   .mobileMenu {
     display: flex;
+  }
+
+  .demoTitle {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 1rem 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .logoWrapper {
+    gap: 0.5rem;
+  }
+
+  .demoBadge {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.65rem;
+    animation: demoBadgeBounce 0.6s ease-out;
+  }
+
+  @keyframes demoBadgeBounce {
+    0% {
+      transform: scale(0) rotate(-180deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(10deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
   }
 }

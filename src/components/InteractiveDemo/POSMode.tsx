@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Minus, X, ShoppingCart } from 'lucide-react'
-import { products } from '../../data/products'
+import { productsByBusiness, BusinessType } from '../../data/products'
 import { CartItem } from '../../types/demo'
 import ReceiptPrinter from './ReceiptPrinter'
 import styles from './InteractiveDemo.module.css'
 
-export default function POSMode() {
+interface POSModeProps {
+  businessType: BusinessType
+}
+
+export default function POSMode({ businessType }: POSModeProps) {
+  const products = productsByBusiness[businessType]
   const [cart, setCart] = useState<CartItem[]>([])
   const [editingPrice, setEditingPrice] = useState<number | null>(null)
   const [tempPrice, setTempPrice] = useState<string>('')
@@ -91,7 +96,7 @@ export default function POSMode() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className={styles.productIcon}>{product.icon}</div>
+              <img src={product.icon} alt={product.name} className={styles.productImage} />
               <div className={styles.productName}>{product.name}</div>
               <div className={styles.productPrice}>${product.price.toFixed(2)}</div>
               <div className={styles.productStock}>{product.stock} in stock</div>
@@ -139,7 +144,7 @@ export default function POSMode() {
                 layout
               >
                 <div className={styles.cartItemInfo}>
-                  <div className={styles.cartItemIcon}>{item.icon}</div>
+                  <img src={item.icon} alt={item.name} className={styles.cartItemImage} />
                   <div>
                     <div className={styles.cartItemName}>{item.name}</div>
                     {editingPrice === item.id ? (
@@ -260,7 +265,7 @@ export default function POSMode() {
                       layout
                     >
                       <div className={styles.cartItemInfo}>
-                        <div className={styles.cartItemIcon}>{item.icon}</div>
+                        <img src={item.icon} alt={item.name} className={styles.cartItemImage} />
                         <div>
                           <div className={styles.cartItemName}>{item.name}</div>
                           {editingPrice === item.id ? (

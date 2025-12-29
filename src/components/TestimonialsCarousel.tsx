@@ -16,7 +16,7 @@ export default function TestimonialsCarousel() {
       // Create seamless infinite loop
       const totalWidth = cards.reduce((acc, card) => acc + card.offsetWidth + 32, 0) // 32 = gap
 
-      gsap.to(carousel, {
+      const animation = gsap.to(carousel, {
         x: -totalWidth / 2,
         duration: 60,
         ease: 'none',
@@ -24,13 +24,22 @@ export default function TestimonialsCarousel() {
       })
 
       // Pause on hover
-      carousel.addEventListener('mouseenter', () => {
-        gsap.to(carousel, { timeScale: 0.3, duration: 0.5 })
-      })
+      const handleMouseEnter = () => {
+        gsap.to(animation, { timeScale: 0.3, duration: 0.5 })
+      }
 
-      carousel.addEventListener('mouseleave', () => {
-        gsap.to(carousel, { timeScale: 1, duration: 0.5 })
-      })
+      const handleMouseLeave = () => {
+        gsap.to(animation, { timeScale: 1, duration: 0.5 })
+      }
+
+      carousel.addEventListener('mouseenter', handleMouseEnter)
+      carousel.addEventListener('mouseleave', handleMouseLeave)
+
+      return () => {
+        carousel.removeEventListener('mouseenter', handleMouseEnter)
+        carousel.removeEventListener('mouseleave', handleMouseLeave)
+        animation.kill()
+      }
     }
   }, [])
 

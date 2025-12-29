@@ -24,27 +24,36 @@ export default function IntegrationShowcase() {
   useEffect(() => {
     if (carouselRef.current) {
       const carousel = carouselRef.current
-      const cards = carousel.querySelectorAll(`.${styles.integrationCard}`)
+      const cards = Array.from(carousel.children) as HTMLElement[]
 
-      // Create infinite horizontal loop
-      gsap.to(cards, {
-        xPercent: -100 * cards.length,
-        repeat: -1,
+      // Calculate total width for seamless loop
+      const totalWidth = cards.reduce((acc, card) => acc + card.offsetWidth + 32, 0) // 32 = gap
+
+      // Create seamless infinite loop (moves left continuously)
+      const animation = gsap.to(carousel, {
+        x: -totalWidth / 2,
         duration: 30,
         ease: 'none',
-        modifiers: {
-          xPercent: gsap.utils.wrap(-100, 0)
-        }
+        repeat: -1
       })
 
-      // Pause on hover
-      carousel.addEventListener('mouseenter', () => {
-        gsap.globalTimeline.timeScale(0.2)
-      })
+      // Slow down on hover
+      const handleMouseEnter = () => {
+        gsap.to(animation, { timeScale: 0.2, duration: 0.5 })
+      }
 
-      carousel.addEventListener('mouseleave', () => {
-        gsap.globalTimeline.timeScale(1)
-      })
+      const handleMouseLeave = () => {
+        gsap.to(animation, { timeScale: 1, duration: 0.5 })
+      }
+
+      carousel.addEventListener('mouseenter', handleMouseEnter)
+      carousel.addEventListener('mouseleave', handleMouseLeave)
+
+      return () => {
+        carousel.removeEventListener('mouseenter', handleMouseEnter)
+        carousel.removeEventListener('mouseleave', handleMouseLeave)
+        animation.kill()
+      }
     }
   }, [])
 

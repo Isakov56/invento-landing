@@ -46,34 +46,113 @@
   margin: 0 auto;
 }
 
-.header {
+/* Section Header (outside demo app) */
+.sectionHeader {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
-.headerContent {
+.sectionHeader h2 {
+  font-size: 2.75rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.sectionHeader p {
+  font-size: 1.25rem;
+  color: var(--slate-gray);
+}
+
+/* Business Type Selector - Desktop */
+.businessSelectorDesktop {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* Business Type Selector - Mobile (inside demo app) */
+.businessSelectorMobile {
+  display: none; /* Hidden on desktop */
+  padding: 1rem 0;
+  background: white;
+  border-bottom: 1px solid var(--border-gray);
   position: relative;
 }
 
-.hamburgerBtn {
-  display: none; /* Hidden on desktop */
+/* Scroll fade indicator */
+.businessSelectorMobile::after {
+  content: '';
   position: absolute;
-  left: 0;
-  background: none;
-  border: none;
-  color: var(--royal-blue);
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 6px;
-  transition: background 0.2s ease;
+  right: 0;
+  top: 2.5rem;
+  bottom: 0.5rem;
+  width: 40px;
+  background: linear-gradient(to right, transparent, white);
+  pointer-events: none;
+  z-index: 1;
 }
 
-.hamburgerBtn:hover {
-  background: rgba(37, 99, 235, 0.1);
+.businessLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+  padding: 0 1.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.businessButtons {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 1.5rem 0.5rem 1.5rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  position: relative;
+  z-index: 0;
+}
+
+.businessButtons::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.businessButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--border-gray);
+  background: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--slate-gray);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.businessButton:hover {
+  border-color: var(--royal-blue);
+  background: rgba(37, 99, 235, 0.05);
+  color: var(--royal-blue);
+}
+
+.businessButtonActive {
+  border-color: var(--royal-blue);
+  background: var(--royal-blue);
+  color: white;
+}
+
+.businessButtonActive:hover {
+  background: var(--royal-blue);
+  color: white;
 }
 
 .header h2 {
@@ -268,6 +347,11 @@
 }
 
 /* Mode Indicator */
+.modeIndicatorWrapper {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
 .modeIndicator {
   display: flex;
   align-items: center;
@@ -275,8 +359,12 @@
   padding: 1.5rem 2rem;
   background: linear-gradient(135deg, var(--royal-blue) 0%, var(--navy-blue) 100%);
   border-radius: 12px;
-  margin-bottom: 2rem;
   box-shadow: 0 4px 16px rgba(37, 99, 235, 0.2);
+  border: none;
+  width: 100%;
+  cursor: default;
+  text-align: left;
+  position: relative;
 }
 
 .modeIndicatorIcon {
@@ -307,6 +395,115 @@
   margin: 0;
   font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.modeIndicatorChevron {
+  display: none; /* Hidden on desktop */
+  color: white;
+  margin-left: auto;
+}
+
+/* Mode Dropdown */
+.modeDropdownOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  backdrop-filter: blur(2px);
+}
+
+.modeDropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  z-index: 101;
+  overflow: hidden;
+  border: 1px solid var(--border-gray);
+}
+
+.modeDropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: white;
+  border: none;
+  border-bottom: 1px solid var(--border-gray);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.modeDropdownItem:last-child {
+  border-bottom: none;
+}
+
+.modeDropdownItem:hover {
+  background: var(--pale-gray);
+}
+
+.modeDropdownItemActive {
+  background: var(--light-blue);
+}
+
+.modeDropdownItemActive:hover {
+  background: var(--light-blue);
+}
+
+.modeDropdownIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--pale-gray);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--royal-blue);
+  flex-shrink: 0;
+}
+
+.modeDropdownItemActive .modeDropdownIcon {
+  background: var(--royal-blue);
+  color: white;
+}
+
+.modeDropdownText {
+  flex: 1;
+}
+
+.modeDropdownLabel {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+  margin-bottom: 0.25rem;
+}
+
+.modeDropdownDescription {
+  font-size: 0.8125rem;
+  color: var(--slate-gray);
+}
+
+.modeDropdownCheck {
+  color: var(--royal-blue);
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Hide dropdown on desktop */
+@media (min-width: 769px) {
+  .modeDropdownOverlay,
+  .modeDropdown {
+    display: none;
+  }
 }
 
 /* POS Mode */
@@ -362,6 +559,14 @@
 
 .productIcon {
   font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.productImage {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
   margin-bottom: 0.5rem;
 }
 
@@ -424,6 +629,14 @@
 
 .cartItemIcon {
   font-size: 1.5rem;
+}
+
+.cartItemImage {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
 
 .cartItemName {
@@ -1286,6 +1499,19 @@
     padding: 0;
   }
 
+  .sectionHeader {
+    padding: 0 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .sectionHeader p {
+    font-size: 1rem;
+  }
+
   .header {
     padding: 0 1.5rem;
   }
@@ -1298,9 +1524,27 @@
     font-size: 1rem;
   }
 
-  /* Show hamburger button on mobile */
-  .hamburgerBtn {
-    display: flex;
+  /* Hide desktop business selector on mobile */
+  .businessSelectorDesktop {
+    display: none !important;
+  }
+
+  /* Show mobile business selector inside demo app */
+  .businessSelectorMobile {
+    display: block;
+  }
+
+  .businessSelectorMobile .businessButton {
+    flex-shrink: 0;
+    min-width: auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }
+
+  .businessSelectorMobile .businessButton svg {
+    flex-shrink: 0;
   }
 
   /* Hide desktop tabs on mobile */
@@ -1321,12 +1565,18 @@
     min-height: calc(100vh - 200px);
   }
 
-  /* Mode Indicator Mobile */
+  /* Mode Indicator Mobile - Make it clickable */
   .modeIndicator {
     flex-direction: row;
     gap: 1rem;
     padding: 1rem 1.25rem;
     margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .modeIndicator:active {
+    transform: scale(0.98);
   }
 
   .modeIndicatorIcon {
@@ -1340,6 +1590,27 @@
 
   .modeIndicatorText p {
     font-size: 0.8125rem;
+  }
+
+  /* Show chevron on mobile */
+  .modeIndicatorChevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: chevronBounce 2s ease-in-out infinite;
+  }
+
+  .modeIndicatorChevronActive {
+    animation: none;
+  }
+
+  @keyframes chevronBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(3px);
+    }
   }
 
   .metricsGrid,
