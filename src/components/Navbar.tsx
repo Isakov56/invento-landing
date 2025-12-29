@@ -8,7 +8,7 @@ interface NavbarProps {
   setShowDemoSidebar: (show: boolean) => void
 }
 
-export default function Navbar({ showDemoSidebar, setShowDemoSidebar }: NavbarProps) {
+export default function Navbar({ setShowDemoSidebar }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDemoInView, setIsDemoInView] = useState(false)
 

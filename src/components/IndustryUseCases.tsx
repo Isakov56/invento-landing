@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
 import { gsap } from '../utils/gsapConfig'
 import styles from './IndustryUseCases.module.css'
 
