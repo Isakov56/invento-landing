@@ -52,6 +52,25 @@
   margin-bottom: 2.5rem;
 }
 
+.sectionHeaderBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  border: 2px solid #F59E0B;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #92400E;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.sectionHeaderBadge svg {
+  color: #F59E0B;
+}
+
 .sectionHeader h2 {
   font-size: 2.75rem;
   color: var(--dark-gray);
@@ -62,6 +81,7 @@
 .sectionHeader p {
   font-size: 1.25rem;
   color: var(--slate-gray);
+  font-weight: 600;
 }
 
 /* Business Type Selector - Desktop */
@@ -185,6 +205,7 @@
   display: flex;
   border-bottom: 2px solid var(--border-gray);
   background: var(--pale-gray);
+  position: relative;
 }
 
 .tab {
@@ -226,6 +247,79 @@
   right: 0;
   height: 2px;
   background: var(--royal-blue);
+}
+
+/* Book Demo CTA */
+.bookDemoCta {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 1.5rem 1rem;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  border-bottom: 3px solid #047857;
+}
+
+.bookDemoCta:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.bookDemoGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3), transparent);
+  pointer-events: none;
+}
+
+.bookDemoIcon {
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(10deg) scale(1.1);
+  }
+}
+
+.bookDemoText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.125rem;
+}
+
+.bookDemoTitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  opacity: 0.95;
+  line-height: 1;
+}
+
+.bookDemoSubtitle {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile Sidebar Navigation */
@@ -339,6 +433,58 @@
 
 .sidebarItem span {
   flex: 1;
+}
+
+/* Book Demo in Sidebar */
+.sidebarBookDemo {
+  margin-top: auto;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #047857;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+}
+
+.sidebarBookDemoGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent);
+  pointer-events: none;
+}
+
+.sidebarBookDemo svg {
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.sidebarBookDemoText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebarBookDemoTitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.sidebarBookDemoSubtitle {
+  font-size: 1.0625rem;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .demoContent {

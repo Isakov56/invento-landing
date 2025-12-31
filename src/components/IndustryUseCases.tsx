@@ -4,7 +4,19 @@ import styles from './IndustryUseCases.module.css'
 
 const industries = [
   {
-    image: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop&q=80',
+    name: 'Pharmacy & Drug Store',
+    description: 'Specialized system for pharmaceutical retail',
+    features: [
+      'Prescription management and tracking',
+      'Drug expiration alerts and batch tracking',
+      'Insurance claim processing integration',
+      'Controlled substance monitoring and compliance'
+    ],
+    color: '#00A86B'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&h=300&fit=crop&q=80',
     name: 'Café & Coffee Shops',
     description: 'Perfect for high-volume quick service',
     features: [
@@ -16,7 +28,7 @@ const industries = [
     color: '#8B4513'
   },
   {
-    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&q=80',
     name: 'Boutique & Fashion',
     description: 'Elegant solution for apparel retail',
     features: [
@@ -28,7 +40,7 @@ const industries = [
     color: '#E91E63'
   },
   {
-    image: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=400&h=300&fit=crop&q=80',
     name: 'Grocery & Convenience',
     description: 'Built for everyday essentials',
     features: [
@@ -40,7 +52,7 @@ const industries = [
     color: '#4CAF50'
   },
   {
-    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=300&fit=crop&q=80',
     name: 'Cosmetics & Beauty',
     description: 'Premium solution for beauty retail',
     features: [
@@ -52,7 +64,7 @@ const industries = [
     color: '#9C27B0'
   },
   {
-    image: 'https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1601524909162-ae8725290836?w=400&h=300&fit=crop&q=80',
     name: 'Electronics Store',
     description: 'Advanced features for tech retail',
     features: [
@@ -64,7 +76,7 @@ const industries = [
     color: '#2196F3'
   },
   {
-    image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1534237886190-ced735ca4b73?w=400&h=300&fit=crop&q=80',
     name: 'Hardware & Tools',
     description: 'Built for construction supply stores',
     features: [

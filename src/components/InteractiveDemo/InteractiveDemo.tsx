@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, ShoppingCart, Users, BarChart3, TrendingUp, Coffee, Shirt, ShoppingBag, Sparkles, Smartphone, Hammer, ChevronDown } from 'lucide-react'
+import { X, ShoppingCart, Users, BarChart3, TrendingUp, Coffee, Shirt, ShoppingBag, Sparkles, Smartphone, Hammer, ChevronDown, Pill } from 'lucide-react'
 import DemoTabs from './DemoTabs'
 import POSMode from './POSMode'
 import CustomerMode from './CustomerMode'
@@ -12,6 +12,7 @@ import styles from './InteractiveDemo.module.css'
 export type DemoMode = 'pos' | 'customers' | 'reports' | 'marketing'
 
 const businessTypes = [
+  { id: 'pharmacy' as BusinessType, label: 'Pharmacy', icon: Pill },
   { id: 'cafe' as BusinessType, label: 'Café', icon: Coffee },
   { id: 'fashion' as BusinessType, label: 'Fashion', icon: Shirt },
   { id: 'grocery' as BusinessType, label: 'Grocery', icon: ShoppingBag },
@@ -54,7 +55,7 @@ interface InteractiveDemoProps {
 
 export default function InteractiveDemo({ showDemoSidebar, setShowDemoSidebar }: InteractiveDemoProps) {
   const [activeMode, setActiveMode] = useState<DemoMode>('pos')
-  const [businessType, setBusinessType] = useState<BusinessType>('cafe')
+  const [businessType, setBusinessType] = useState<BusinessType>('pharmacy')
   const [showModeDropdown, setShowModeDropdown] = useState(false)
 
   const currentMode = mobileNavItems.find(item => item.id === activeMode)
@@ -77,8 +78,12 @@ export default function InteractiveDemo({ showDemoSidebar, setShowDemoSidebar }:
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <div className={styles.sectionHeaderBadge}>
+            <Sparkles size={14} />
+            <span>Interactive Preview</span>
+          </div>
           <h2>Experience Invento in Action</h2>
-          <p>Interactive demo - try all the features yourself</p>
+          <p>Try a sample of our features - the full system has 10x more power!</p>
         </motion.div>
 
         {/* Business Type Selector - Desktop */}
@@ -188,6 +193,31 @@ export default function InteractiveDemo({ showDemoSidebar, setShowDemoSidebar }:
                         </button>
                       )
                     })}
+
+                    {/* Book Demo CTA in Sidebar */}
+                    <motion.a
+                      href="#contact"
+                      className={styles.sidebarBookDemo}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setShowDemoSidebar(false)}
+                    >
+                      <motion.div
+                        className={styles.sidebarBookDemoGlow}
+                        animate={{
+                          opacity: [0.3, 0.6, 0.3],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      />
+                      <Sparkles size={22} />
+                      <div className={styles.sidebarBookDemoText}>
+                        <div className={styles.sidebarBookDemoTitle}>This is just the tip of the iceberg!</div>
+                        <div className={styles.sidebarBookDemoSubtitle}>See What's Really Possible →</div>
+                      </div>
+                    </motion.a>
                   </div>
                 </motion.div>
               </>

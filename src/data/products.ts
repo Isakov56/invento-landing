@@ -1,8 +1,90 @@
 import { Product } from '../types/demo'
 
-export type BusinessType = 'cafe' | 'fashion' | 'grocery' | 'cosmetics' | 'electronics' | 'hardware'
+export type BusinessType = 'pharmacy' | 'cafe' | 'fashion' | 'grocery' | 'cosmetics' | 'electronics' | 'hardware'
 
 export const productsByBusiness: Record<BusinessType, Product[]> = {
+  pharmacy: [
+    {
+      id: 1,
+      name: 'Analgin 500mg',
+      category: 'Pain Relief',
+      price: 5000,
+      stock: 150,
+      icon: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=100&h=100&fit=crop'
+    },
+    {
+      id: 2,
+      name: 'Trimol 500mg',
+      category: 'Pain Relief',
+      price: 8000,
+      stock: 120,
+      icon: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=100&h=100&fit=crop'
+    },
+    {
+      id: 3,
+      name: 'Paracetamol 500mg',
+      category: 'Pain Relief',
+      price: 4000,
+      stock: 180,
+      icon: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=100&h=100&fit=crop'
+    },
+    {
+      id: 4,
+      name: 'Citramon',
+      category: 'Pain Relief',
+      price: 6000,
+      stock: 100,
+      icon: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=100&h=100&fit=crop'
+    },
+    {
+      id: 5,
+      name: 'No-Shpa 40mg',
+      category: 'Antispasmodic',
+      price: 12000,
+      stock: 80,
+      icon: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=100&h=100&fit=crop'
+    },
+    {
+      id: 6,
+      name: 'Aspirin 500mg',
+      category: 'Pain Relief',
+      price: 7000,
+      stock: 140,
+      icon: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=100&h=100&fit=crop'
+    },
+    {
+      id: 7,
+      name: 'Amoxicillin 500mg',
+      category: 'Antibiotics',
+      price: 25000,
+      stock: 60,
+      icon: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=100&h=100&fit=crop'
+    },
+    {
+      id: 8,
+      name: 'Nurofen 200mg',
+      category: 'Pain Relief',
+      price: 15000,
+      stock: 90,
+      icon: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=100&h=100&fit=crop'
+    },
+    {
+      id: 9,
+      name: 'Vitamin C 1000mg',
+      category: 'Vitamins',
+      price: 10000,
+      stock: 110,
+      icon: 'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=100&h=100&fit=crop'
+    },
+    {
+      id: 10,
+      name: 'Suprastin 25mg',
+      category: 'Antihistamine',
+      price: 9000,
+      stock: 95,
+      icon: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=100&h=100&fit=crop'
+    }
+  ],
   cafe: [
     {
       id: 1,
@@ -306,4 +388,4 @@ export const productsByBusiness: Record<BusinessType, Product[]> = {
 }
 
 // Default products for backwards compatibility
-export const products: Product[] = productsByBusiness.cafe
+export const products: Product[] = productsByBusiness.pharmacy

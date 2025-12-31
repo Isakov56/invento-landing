@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ShoppingCart, Users, BarChart3, TrendingUp } from 'lucide-react'
+import { ShoppingCart, Users, BarChart3, TrendingUp, Sparkles } from 'lucide-react'
 import { DemoMode } from './InteractiveDemo'
 import styles from './InteractiveDemo.module.css'
 
@@ -40,6 +40,32 @@ export default function DemoTabs({ activeMode, setActiveMode }: DemoTabsProps) {
           </button>
         )
       })}
+
+      {/* Book Real Demo CTA */}
+      <motion.a
+        href="#contact"
+        className={styles.bookDemoCta}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <motion.div
+          className={styles.bookDemoGlow}
+          animate={{
+            opacity: [0.5, 1, 0.5],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <Sparkles className={styles.bookDemoIcon} size={18} />
+        <span className={styles.bookDemoText}>
+          <span className={styles.bookDemoTitle}>This is just a preview!</span>
+          <span className={styles.bookDemoSubtitle}>See the Full System →</span>
+        </span>
+      </motion.a>
     </div>
   )
 }

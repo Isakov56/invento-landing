@@ -12,6 +12,7 @@ import SecurityCompliance from './components/SecurityCompliance'
 import IntegrationShowcase from './components/IntegrationShowcase'
 import Pricing from './components/Pricing'
 import FAQ from './components/FAQ'
+import Contact from './components/Contact'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 import AIChatbot from './components/AIChatbot'
@@ -49,6 +50,7 @@ function App() {
       <IntegrationShowcase />
       <Pricing />
       <FAQ />
+      <Contact />
       <CTA />
       <Footer />
       <AIChatbot />
