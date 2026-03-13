@@ -66,7 +66,7 @@ export default function Hero() {
 
           <div className={styles.downloadRow}>
             <a
-              href="https://github.com/Isakov56/retail-desktop/releases/latest/download/Invento.POS_0.3.0_x64-setup.exe"
+              href="https://github.com/Isakov56/retail-desktop/releases/download/v0.3.0/Invento.POS_0.3.0_x64-setup.exe"
               className={styles.downloadButton}
               target="_blank"
               rel="noopener noreferrer"
