@@ -95,6 +95,42 @@
   background: var(--light-blue);
 }
 
+/* Download Desktop App */
+.downloadRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.downloadButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--transition-normal);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25);
+}
+
+.downloadButton:hover {
+  background: linear-gradient(135deg, #334155 0%, #1E293B 100%);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.35);
+  transform: translateY(-1px);
+}
+
+.downloadNote {
+  font-size: 0.8rem;
+  color: var(--slate-gray);
+  font-weight: 500;
+}
+
 .badges {
   display: flex;
   gap: 2rem;
@@ -132,6 +168,10 @@
   .primaryButton,
   .secondaryButton {
     justify-content: center;
+  }
+
+  .downloadRow {
+    flex-direction: column;
   }
 
   .badges {

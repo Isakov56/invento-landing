@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from '../utils/gsapConfig'
 import { useMagneticButton } from '../hooks/useMagneticButton'
 import { useTextReveal } from '../hooks/useTextReveal'
-import { CreditCard, TrendingUp, Package, DollarSign, ShoppingBag, Users, Clock, Star } from 'lucide-react'
+import { CreditCard, TrendingUp, Package, DollarSign, ShoppingBag, Users, Clock, Star, Download, Monitor } from 'lucide-react'
 import styles from './Hero.module.css'
 
 export default function Hero() {
@@ -62,6 +62,20 @@ export default function Hero() {
           <div className={styles.buttons}>
             <a href="/register" className={styles.ctaButton} ref={ctaRef}>Start Free Trial</a>
             <a href="#demo" className={styles.secondaryButton} ref={secondaryRef}>Try Interactive Demo</a>
+          </div>
+
+          <div className={styles.downloadRow}>
+            <a
+              href="https://github.com/Isakov56/retail-desktop/releases/latest/download/Invento.POS_0.3.0_x64-setup.exe"
+              className={styles.downloadButton}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Monitor size={20} />
+              Download Desktop App
+              <Download size={16} />
+            </a>
+            <span className={styles.downloadNote}>Windows 10/11 &middot; Free</span>
           </div>
 
           <div className={styles.badges}>

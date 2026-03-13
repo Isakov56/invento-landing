@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight, Sparkles, Download, Monitor } from 'lucide-react'
 import styles from './CTA.module.css'
 
 export default function CTA() {
@@ -33,6 +33,20 @@ export default function CTA() {
             <a href="#demo" className={styles.secondaryButton}>
               Try the Demo
             </a>
+          </div>
+
+          <div className={styles.downloadRow}>
+            <a
+              href="https://github.com/Isakov56/retail-desktop/releases/latest/download/Invento.POS_0.3.0_x64-setup.exe"
+              className={styles.downloadButton}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Monitor size={18} />
+              Download Desktop App
+              <Download size={15} />
+            </a>
+            <span className={styles.downloadNote}>Windows 10/11 &middot; Free</span>
           </div>
 
           <div className={styles.badges}>
